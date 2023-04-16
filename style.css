@@ -140,7 +140,9 @@ li{
 
  /* General Styles */
 
+ /* 
  *{
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -203,7 +205,92 @@ li{
 
  .button-area button:active{
     background-color: lightblue;
- }
+ } */
+
+/* Project 2  */
+
+/* Styling Modal */
+
+body{
+    background: url(img/project-2.jpg) no-repeat center center/
+    cover;
+    height: 95vh;
+    position: relative;
+}
+
+#open-btn{
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 200px;
+    height: 60px;
+    font-size: 1rem;
+    background: transparent;
+    color: #fff;
+    border: solid 2px #fff;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 3px black;
+    transition: .5s;
+}
+
+#open-btn:hover{
+    background-color: #fff;
+    color: #262626;
+}
+
+#modal{
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation-name: animatemodal;
+    animation-duration: .4s;
+}
+
+#close-btn{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+#modal-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Modal Animation */
+
+@keyframes animatemodal {
+    from{
+        top: -300px;
+        opacity: 0;
+        background-color: green;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+
+
 
 
 

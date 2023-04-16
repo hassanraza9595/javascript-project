@@ -282,58 +282,60 @@
 
 // Variables
 
-let btn = document.querySelector('#new-quote');
-let quotation = document.querySelector('.quote');
-let person = document.querySelector('.person');
+// let btn = document.querySelector('#new-quote');
+// let quotation = document.querySelector('.quote');
+// let person = document.querySelector('.person');
 
 // Quotations
 
-const quotes = [{
-   quote: `"The best way to find yourself is to lose yourself in the service of others."`,
-   person: ` Mahatma Gandhi`
-}, {
-   quote: `"If you want to live a happy life, tie it to a goal, not to people or things."`,
-   person: ` Albert Einstein`
-}, {
-   quote: `"At his best, man is the noblest of all animals; separated from law and justice he is the worst."`,
-   person: `Aristotle`
-}, {
-   quote: `"Your time is limited, so dont waste it living someone else's life."`,
-   person: ` Steve Jobs`
-}, {
-   quote: `"Tell me and I forget. Teach me and I remember. Involve me and I learn."`,
-   person: ` Benjamin Franklin`
-}, {
-   quote: `"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough."`,
-   person: `Oprah Winfrey`
-}, {
-   quote: `"t does not matter how slowly you go as long as you do not stop."`,
-   person: `Confucius`
-}, {
-   quote: `"Our lives begin to end the day we become silent about things that matter."`,
-   person: `Martin Luther King, Jr.`
-}, {
-   quote: `"Remember that not getting what you want is sometimes a wonderful stroke of luck."`,
-   person: `Dalai Lama`
-}, {
-   quote: `"The journey of a thousand miles begins with one step."`,
-   person: `Lao Tzu`
-}, ];
+// const quotes = [{
+//    quote: `"The best way to find yourself is to lose yourself in the service of others."`,
+//    person: ` Mahatma Gandhi`
+// }, {
+//    quote: `"If you want to live a happy life, tie it to a goal, not to people or things."`,
+//    person: ` Albert Einstein`
+// }, {
+//    quote: `"At his best, man is the noblest of all animals; separated from law and justice he is the worst."`,
+//    person: `Aristotle`
+// }, {
+//    quote: `"Your time is limited, so dont waste it living someone else's life."`,
+//    person: ` Steve Jobs`
+// }, {
+//    quote: `"Tell me and I forget. Teach me and I remember. Involve me and I learn."`,
+//    person: ` Benjamin Franklin`
+// }, {
+//    quote: `"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough."`,
+//    person: `Oprah Winfrey`
+// }, {
+//    quote: `"t does not matter how slowly you go as long as you do not stop."`,
+//    person: `Confucius`
+// }, {
+//    quote: `"Our lives begin to end the day we become silent about things that matter."`,
+//    person: `Martin Luther King, Jr.`
+// }, {
+//    quote: `"Remember that not getting what you want is sometimes a wonderful stroke of luck."`,
+//    person: `Dalai Lama`
+// }, {
+//    quote: `"The journey of a thousand miles begins with one step."`,
+//    person: `Lao Tzu`
+// }, ];
 
 
-btn.addEventListener('click', function(){
+// btn.addEventListener('click', function(){
 
-   let random = Math.floor(Math.random() * quotes.length);
+//    let random = Math.floor(Math.random() * quotes.length);
    
-   quotation.innerText = quotes[random].quote;
-   person.innerText = quotes[random].person;
+//    quotation.innerText = quotes[random].quote;
+//    person.innerText = quotes[random].person;
 
-   console.log(quotes[random].person)
-})
+//    console.log(quotes[random].person)
+// })
 
 
 
 // Project 2 
+
+
 /* Key Concepts for Project
 
    document.getElementByID();
@@ -343,4 +345,25 @@ btn.addEventListener('click', function(){
    CSS Animation
 
 */
+
+let btn = document.getElementById('open-btn');
+let modal = document.getElementById('modal-container');
+let closeBtn = document.getElementById('close-btn');
+
+btn.addEventListener('click', function(){
+   
+   modal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', function() {
+
+   modal.style.display = 'none';
+})
+
+window.addEventListener('click', function(e){
+
+   if(e.target === modal){
+     modal.style.display = 'none';
+   }
+})
 
