@@ -346,24 +346,38 @@
 
 */
 
-let btn = document.getElementById('open-btn');
-let modal = document.getElementById('modal-container');
-let closeBtn = document.getElementById('close-btn');
+// let btn = document.getElementById('open-btn');
+// let modal = document.getElementById('modal-container');
+// let closeBtn = document.getElementById('close-btn');
 
-btn.addEventListener('click', function(){
-   
-   modal.style.display = 'block';
-});
+// btn.addEventListener('click', function(){
 
-closeBtn.addEventListener('click', function() {
+//    modal.style.display = 'block';
+// });
 
-   modal.style.display = 'none';
-})
+// closeBtn.addEventListener('click', function() {
 
-window.addEventListener('click', function(e){
+//    modal.style.display = 'none';
+// })
 
-   if(e.target === modal){
-     modal.style.display = 'none';
-   }
-})
+// window.addEventListener('click', function(e){
+
+//    if(e.target === modal){
+//      modal.style.display = 'none';
+//    }
+// })
+
+// =================================== 
+
+// Project 3 
+
+// Variables 
+
+const accordion = document.getElementsByClassName('content-container');
+
+for( i=0; i<accordion.length; i++){
+   accordion[i].addEventListener('click', function(){
+      this.classList.toggle('active');
+   })
+}
 

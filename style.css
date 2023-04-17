@@ -210,7 +210,7 @@ li{
 /* Project 2  */
 
 /* Styling Modal */
-
+/* 
 body{
     background: url(img/project-2.jpg) no-repeat center center/
     cover;
@@ -272,11 +272,11 @@ body{
     width: 100%;
     height: 100%;
     z-index: 1;
-}
+} */
 
 /* Modal Animation */
 
-@keyframes animatemodal {
+/* @keyframes animatemodal {
     from{
         top: -300px;
         opacity: 0;
@@ -287,10 +287,72 @@ body{
         top: 50%;
         opacity: 1;
     }
+} */
+
+
+/* Project 3 Styling */
+
+
+
+body{
+    background: url(img/project-3.jpg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.accordion{
+    width: 80%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+}
 
+.accordion .accordion-title{
+    margin-bottom: 20px;
+    text-align: center;
+}
 
+.accordion .content-container .question {
+    padding: 3px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
 
+    position: relative;
+}
 
+.accordion .content-container .question::after{
+
+    content: '+';
+    position: absolute;
+    right: -1px;
+}
+
+.accordion .content-container .answer{
+    font-size: 16px;
+    width: 100%;
+
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* JavaScript Styling Link */
+
+.accordion .content-container.active .answer{
+    height: 150px;
+}
+
+.accordion .content-container.active .question{
+    font-size: 18px;
+    transition: .5s;
+}
+
+.accordion .content-container.active .question::after{
+    content: '-';
+    font-size: 30px;
+    transition: .5s;
+}
 
