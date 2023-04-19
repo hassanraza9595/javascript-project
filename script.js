@@ -395,98 +395,153 @@
 
 // Variables for buttons
 
-const startStopBtn = document.querySelector('#startStopBtn');
-const resetBtn = document.querySelector('#resetBtn');
+// const startStopBtn = document.querySelector('#startStopBtn');
+// const resetBtn = document.querySelector('#resetBtn');
 
 // Variables for time values
 
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
+// let seconds = 0;
+// let minutes = 0;
+// let hours = 0;
 
 // Variables for leading Zero
 
-let leadingSeconds = 0;
-let leadingMinutes = 0;
-let leadingHours = 0;
+// let leadingSeconds = 0;
+// let leadingMinutes = 0;
+// let leadingHours = 0;
 
 // Variables for set interval & timerstatus
 
-let timerInterval = null;
-let timerStatus = "stopped";
+// let timerInterval = null;
+// let timerStatus = "stopped";
 
 
 // Stop Watch Function
 
-function stopWatch( ) {
+// function stopWatch( ) {
 
-   seconds++;
-   if(seconds / 60 === 1){
-      seconds = 0;
-      minutes++;
+//    seconds++;
+//    if(seconds / 60 === 1){
+//       seconds = 0;
+//       minutes++;
 
-      if(minutes / 60 === 1){
-         minutes = 0;
-         hours++;
-      }
-   }
+//       if(minutes / 60 === 1){
+//          minutes = 0;
+//          hours++;
+//       }
+//    }
 
-   if(seconds < 10){
-      leadingSeconds = "0" + seconds.toString();
-   }
-   else{
-      leadingSeconds = seconds;
-   }
+//    if(seconds < 10){
+//       leadingSeconds = "0" + seconds.toString();
+//    }
+//    else{
+//       leadingSeconds = seconds;
+//    }
 
-   if(minutes < 10){
-      leadingMinutes = "0" + minutes.toString();
-   }
-   else{
-      leadingMinutes = minutes;
-   }
+//    if(minutes < 10){
+//       leadingMinutes = "0" + minutes.toString();
+//    }
+//    else{
+//       leadingMinutes = minutes;
+//    }
 
-   if(hours < 10){
-      leadingHours = "0" + hours.toString();
-   }
-   else{
-      leadingHours = hours;
-   }
+//    if(hours < 10){
+//       leadingHours = "0" + hours.toString();
+//    }
+//    else{
+//       leadingHours = hours;
+//    }
 
-   let displayTimer  =  document.getElementById('timer').innerText = 
-   hours + ":" + minutes + ":" + seconds;
+//    let displayTimer  =  document.getElementById('timer').innerText = 
+//    hours + ":" + minutes + ":" + seconds;
 
-}
+// }
 
 // 
 
-startStopBtn.addEventListener('click', function( ) {
+// startStopBtn.addEventListener('click', function( ) {
 
-   if(timerStatus === "stopped"){
-      timerInterval = window.setInterval(stopWatch, 1000);
-      document.getElementById('startStopBtn').innerHTML = `
-      <i class="fa-solid fa-pause" id="pause"></i>`;
-      timerStatus = "started";
-   } else{
-      window.clearInterval(timerInterval);
-      document.getElementById('startStopBtn').innerHTML = `
-      <i class="fa-solid fa-play" id="play"></i>`;
-      timerStatus = "stopped";
+//    if(timerStatus === "stopped"){
+//       timerInterval = window.setInterval(stopWatch, 1000);
+//       document.getElementById('startStopBtn').innerHTML = `
+//       <i class="fa-solid fa-pause" id="pause"></i>`;
+//       timerStatus = "started";
+//       console.log(timerInterval);
+//    } else{
+//       window.clearInterval(timerInterval);
+//       document.getElementById('startStopBtn').innerHTML = `
+//       <i class="fa-solid fa-play" id="play"></i>`;
+//       timerStatus = "stopped";
+//       console.log(timerInterval)
+//    }
+
+// });
+
+
+// resetBtn.addEventListener('click', function(){
+//    window.clearInterval(timerInterval);
+//    seconds = 0;
+//    minutes = 0;
+//    hours = 0;
+
+//    document.getElementById('timer').innerHTML = "00:00:00";
+
+// });
+
+
+// Project 5 
+
+// todo list 
+
+// Variables
+
+const addTask = document.getElementById('add-task');
+const taskContainer = document.getElementById('task-container');
+const input = document.getElementById('input-task');
+
+// Event Listener for add button
+
+addTask.addEventListener('click', function() {
+ 
+   let task = document.createElement('div');
+   task.classList.add('task');
+
+   let li = document.createElement('li');
+   li.innerText = `${input.value}`;
+   task.appendChild(li);
+
+   let checkButton = document.createElement('button');
+   checkButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+   checkButton.classList.add('checkTask');
+   task.appendChild(checkButton);
+
+   let deleteButton = document.createElement('button');
+   deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+   deleteButton.classList.add('deleteTask');
+   task.appendChild(deleteButton);
+
+   if(input.value === ""){
+      alert('Please Enter a Task');
+   }else{
+      taskContainer.appendChild(task);
    }
 
+   input.value = "";
+
+   checkButton.addEventListener('click', function(){
+
+      checkButton.parentElement.style.textDecoration = 
+      'line-through';
+   });
+
+
+   deleteButton.addEventListener('click', function(e){
+
+      let target = e.target;
+      target.parentElement.parentElement.remove();
+   })
+
 });
-
-
-resetBtn.addEventListener('click', function(){
-   window.clearInterval(timerInterval);
-   seconds = 0;
-   minutes = 0;
-   hours = 0;
-
-   document.getElementById('timer').innerHTML = "00:00:00";
-
-});
-
-
 
 
 
